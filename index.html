@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery</title>
+	
+	<script src="jquery-1.11.3.js"></script>
+	<script src="jquery.js"></script>
+
+</head>
+<body>
+	<div class="cart">
+		<div class="neirong"><img src="" alt="">
+		</div>
+		<div class="close">关闭</div>
+		<div class="first">门关了，回不去啦</div>
+		<div class="last">已经到尽头啦</div>
+	</div>
+<div class="box">
+	<div class="button">换一批</div>
+    <ul>
+		<li class="link">
+			<a href=""><img src="1.jpg" alt=""></a>
+			<div class="info">这是一张图</div>
+		</li>
+		<li class="link">
+			<a href=""><img src="2.jpg" alt=""></a>
+			<div class="info">这是一张图</div>
+		</li>
+		<li class="link">
+			<a href=""><img src="3.jpg" alt=""></a>
+			<div class="info">这是一张图</div>
+		</li>
+		<li class="link">
+			<a href=""><img src="4.jpg" alt=""></a>
+			<div class="info">这是一张图</div>
+		</li>
+		<li class="link">
+			<a href=""><img src="5.jpg" alt=""></a>
+			<div class="info">这是一张图</div>
+		</li>
+		<li class="link">
+			<a href=""><img src="6.jpg" alt=""></a>
+			<div class="info">这是一张图</div>
+		</li>
+		<li class="link">
+			<a href=""><img src="7.jpg" alt=""></a>
+			<div class="info">这是一张图</div>
+		</li>
+		<li class="link">
+			<a href=""><img src="8.jpg" alt=""></a>
+			<div class="info">这是一张图</div>
+		</li>
+	</ul>
+</div>	
+</body>
+</html>
+<style>
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.first,.last{
+	width: 150px;height: 0;background: rgba(58,158,158,0.8);position: absolute;top:0;left: 0;right: 0;bottom: 0;margin: auto;text-align: center;color: red;line-height: 0;opacity: 0;border-radius: 5px;
+}
+.first.tishi,.last.tishi{
+	height: 50px;opacity: 1;line-height: 50px;
+}
+.cart{
+	position: fixed;
+	left: 0;top:0;
+	width: 100%;
+	height: 0;
+	opacity: 0;
+	background: rgba(0,0,0,0.7);
+	z-index: 100;
+	transition:all .8s ease;
+}
+.cart .neirong{
+	position: absolute;
+	top:0;left: 0;right: 0;bottom: 0;
+	margin: auto;
+	width: 800px;
+	height: 100%;
+	background: rgba(255,255,255,0.4);
+}
+.neirong img{
+	max-width: 100%;max-height: 100%;
+   display: block;
+   position: absolute;
+	top:0;left: 0;right: 0;bottom: 0;
+	margin: auto;
+
+}
+.cart .close{
+	position: absolute;right:0;top:0;
+	width: 80px;height: 30px;
+	background: red;
+	border-radius: 5px;
+	color: white;
+	text-align: center;line-height: 30px;
+   cursor: pointer;
+}
+.cart.show{
+	height: 100%;
+	opacity: 1;
+}
+.box{
+	width: 800px;
+	height: 400px;
+	box-shadow: 0 0 5px black;
+	margin: 50px auto;
+	padding-top: 40px;
+	position: relative;
+}
+.box li{
+	width: 196px;
+	height: 196px;
+	margin: 2px;
+	background: red;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+.box li a{
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+.box li .info{
+	position: absolute;
+	left: 0;bottom: 0;
+	text-align: center;
+	width: 100%;
+	z-index: 5;
+	background: rgba(255,255,255,0.6);
+	padding: 15px 0;
+	transform:translateY(100%);
+	transition:all 0.8s ease;
+}
+.box li a:hover + .info{
+	transform:translateY(0);
+}
+.box li a:hover img{
+	transform:scale(1.2,1.2);
+}
+.box li img{
+	width: 100%;
+	height: 100%;
+	transition:all 0.8s ease;
+}
+.box .button{
+	line-height: 40px;
+	padding: 0 20px;
+	background: pink;
+	position: absolute;
+	top:0;
+	right: 0;
+	border-radius: 5px;
+	cursor: pointer;
+}
+</style>
